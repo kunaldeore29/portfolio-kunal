@@ -1,0 +1,72 @@
+@import "config";
+@import "menu";
+@import "home";
+@import "about-me";
+@import "education";
+@import "skills";
+@import "footer";
+@import "experience";
+@import "project";
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color : white;
+    font-size: 20px;
+    font-family: sans-serif;
+    color: $text-color;
+}
+
+a{
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: surfer;
+    src: url('../dist/Original_Surfer/OriginalSurfer-Regular.ttf') format('truetype');
+}
+
+
+.takeMeTop{
+    display: none;
+    position: fixed;
+    bottom: 7px;
+    right: 15px;
+    transform: translateY(-50%);
+    min-width: 25px;
+    min-height: 25px;
+    max-width: 25px;
+    max-height: 25px;
+    border-radius: 50%;
+    background-color: white;
+    border: lightgray solid 1px;
+    z-index: 1000;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+
+    @include media{
+        min-width: 40px;
+        min-height: 40px;
+        max-width: 40px;
+        max-height: 40px;
+        right: 50px;
+        bottom: 30px;
+        max-width: 40px;
+        max-height: 40px;
+        font-size: 24px;
+    }
+
+    &:hover{
+        background-color: rgb(238, 238, 238);
+        box-shadow: none;
+    }
+
+    .fa-angle-double-up{
+        color: rgba(0, 0, 0, 0.226);
+    }
+}

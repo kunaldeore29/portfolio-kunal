@@ -1,0 +1,130 @@
+.education-wrapper{
+    @include makeFlex(column);
+    background: url("../images/wave.jpg");
+    background-size: cover;
+    background-position: top left;
+    overflow: hidden;
+
+    .about-me-title{
+        @include container();
+        margin: 0 auto;
+
+        > div{
+            h1{
+                padding-top: 40px;
+                padding-left: 16px;
+            }
+
+            &::after{
+                margin-left: 16px;
+            }
+        }
+
+    }
+
+}
+
+.education{
+    @include container;
+    margin: 30px auto;
+    @include makeFlexWithAlign(row, stretch, space-evenly);
+    flex: 1 1 0;
+    flex-wrap: wrap;
+
+    @include media{
+        flex-wrap: nowrap;
+    }
+}
+
+.education-card-wrapper{
+    min-height: 430px;
+    width: 100%;
+    padding: 1rem;
+    overflow: hidden;
+    color: #57667e;
+}
+
+.education-card{
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+    max-width: 500px;
+    height: 100%;
+    border-radius: 10px;
+    @include makeFlex(column);
+    border: rgba(255, 127, 80, 0.137) solid 2px;
+
+    &:after{
+        z-index: -1;
+        position: absolute;
+        content: '';
+        bottom: 0;
+        min-width: 100%;
+        min-height: 0%;
+        background: $accent-color;
+        transition: all 700ms ease;
+        border-radius: 10px;
+    }
+
+    &:hover{
+        color: white;
+        &:after{
+            min-height: 100%;
+        }
+
+    }
+    
+}
+
+.education-card-icon{
+    @include makeFlex(row);
+    justify-content: center;
+    align-items: center;
+    flex-basis: 40%;
+
+    div{
+        border-radius: 50%;
+        background: $accent-color-light;
+        padding: 1rem;
+
+    
+    }
+}
+
+.education-icon{
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 50px;
+    max-height: 50px;
+    color: $accent-color
+}
+
+.education-card-content{
+    @include makeFlex(column);
+    align-items: center;
+    flex-basis: 60%;
+
+    h3{
+        padding: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    p{
+        font-size: 1rem;
+        text-align: center;
+        word-spacing: 0.5rem;
+        align-self: flex-start;
+        padding: 0.2rem 1rem;
+        display: flex;
+        align-items: center;
+
+        .info-icons{
+            margin: 10px;
+        }
+
+        span{
+            text-align: start;
+            margin-left: 2px;
+        }
+    }
+}

@@ -1,0 +1,82 @@
+$primary-color : lightgrey;
+$accent-color : #e44747;
+$accent-color-dark : #e21c1c;
+$accent-color-light : #ffeeee;
+$secondary-color: #3983fa;
+$secondary-color-dark: #0966fc;
+$text-color: white;
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin container{
+    width: 100%;
+    max-width: 1140px;
+}
+
+@mixin makeFlex($direction){
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: nowrap
+}
+
+@mixin  makeFlexWithAlign($direction, $vertical, $horizontal){
+    @include makeFlex($direction);
+    @if($direction == "row"){
+        justify-content: $horizontal;
+        align-items: $vertical;
+    }@else{
+        justify-content: $vertical;
+        align-items: $horizontal;
+    }
+}
+
+@mixin transitionEaseOut {
+    transition: all 400ms ease-out;
+}
+
+@mixin transitionEaseIn {
+    transition: all 400ms ease-in;
+}
+
+@mixin transitionEaseInOut {
+    transition: all 400ms ease-in-out;
+}
+
+@mixin media {
+    @media (min-width: 992px) {
+        @content;
+    }
+}
+
+@function getColor($color){
+    @if(lightness($color) > 40%){
+        @return black;
+    }
+    @return white;
+}
+
+
+@mixin overlay{
+    .overlay{
+        border-radius: 2px;
+        background: $accent-color-dark ;
+       
+        min-width: 0;
+        min-height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include transitionEaseIn;
+    }
+
+    &:hover .overlay{
+        min-width: 100%;
+    }
+}
+
+
+

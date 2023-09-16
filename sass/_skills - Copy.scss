@@ -1,0 +1,61 @@
+.skills{
+    padding: 50px 0;
+}
+
+.skills-container{
+    @include container();
+    margin: 0 auto;
+
+    h1{
+        padding: 0px 0px 0px 16px;
+    }
+
+    .about-me-title{
+        div{
+            &::after{
+                margin-left: 16px;
+            }
+        }
+    }
+
+}
+
+.skills-content{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto; 
+
+    @include media{
+        grid-template-rows: auto auto;
+        grid-template-columns: auto auto auto; 
+    }
+}
+
+.skill-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+    
+
+
+
+    .skill-icon{
+        border-radius: 50%;
+        padding: 20px;
+
+        img{
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    .skill-description{
+        margin-top: 20px;
+        color: black;
+        padding: 0 40px;
+        text-align: center;
+    }
+}
+

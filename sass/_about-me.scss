@@ -1,0 +1,75 @@
+.about-me{
+    top: 0;
+    @include container;
+    margin:  10px auto;
+    padding: 50px 0px;
+}
+
+.about-me-title{
+    @include makeFlex(row);
+    justify-content: flex-start;
+    color: $accent-color;
+    padding: 20px 0px;
+    overflow: hidden;
+
+    & > div{
+        position: relative;
+
+        h1{
+            margin-bottom: 0.5rem;
+        }
+
+        &:after{
+            position: absolute;
+            content: '';
+            bottom: 0;
+            width: 50%;
+            min-height: 3px;
+            background: $accent-color
+        }
+    }
+}
+
+.about-me-content{
+    @include makeFlexWithAlign(row, center, center);
+    flex-wrap: wrap;
+    flex: 1 1 0;
+}
+
+.about-me-image{
+    @include makeFlexWithAlign(row, center, center);
+    flex-basis: 100%;
+    
+    img{
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+    }
+
+    @include media{
+        flex-basis: 35%;
+    }
+}
+
+.about-me-text{
+    flex-basis: 100%;
+    padding: 0 2rem;
+    text-align: justify;
+    color: black;
+
+    @include media{
+        flex-basis: 65%;
+
+        .about-me-title{
+            padding-top: 0px;
+        }
+    }
+
+   
+
+    p{
+        line-height: 1.8em;
+    
+    }
+}
+
